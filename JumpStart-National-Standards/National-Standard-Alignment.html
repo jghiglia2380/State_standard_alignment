@@ -26,7 +26,15 @@
             max-width: 8.5in;
             margin: 0 auto;
         }
-        
+        /* Signature logo (color SVG) */
+.sig-logo { display: flex; align-items: center; }
+.sig-logo-img {
+  height: 100px;   /* try 56; adjust 52–64px to taste */
+  width: auto;
+  display: block;
+}
+
+
         /* Gradient accents */
         body::before {
             content: "";
@@ -70,31 +78,16 @@
         }
         
         .logo-area {
-            display: flex;
-            align-items: center;
+            display: flex; align-items: center; 
         }
+        /* Header logo image (actual SVG) */
+.logo-image {
+  height: 90px;
+  width: auto;
+  display: block; /* avoids tiny baseline gap */
+}
+
         
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 28px;
-            margin-right: 1rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-icon {
-            background: white;
-            color: #4F46E5;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            font-weight: bold;
-        }
         
         .tagline {
             font-family: 'Poppins', sans-serif;
@@ -393,11 +386,13 @@
     <div class="container">
         <header>
             <div class="logo-area">
-                <div class="logo">
-                    <div class="logo-icon">PFL</div>
-                    PFL ACADEMY
-                </div>
-            </div>
+  <img
+    src="https://raw.githubusercontent.com/jghiglia2380/HTML-Content/main/PFL%20Academy%20logo-White.svg"
+    alt="PFL Academy Logo"
+    class="logo-image"
+  />
+</div>
+
             <div class="tagline">NATIONAL STANDARDS ALIGNED CURRICULUM</div>
         </header>
         
@@ -631,9 +626,14 @@
                 <p class="contact-intro-text">For more information about PFL Academy's National Standards-aligned curriculum or to schedule a demonstration, please contact:</p>
                 <div class="signature">
                     <div class="sig-logo">
-                        <div class="sig-logo-icon">PFL</div>
-                        <div class="sig-logo-text">Academy</div>
-                    </div>
+  <img
+    src="https://raw.githubusercontent.com/jghiglia2380/HTML-Content/main/PFL%20Academy%20logo-Color.svg"
+    alt="PFL Academy"
+    class="sig-logo-img"
+  />
+</div>
+
+
                     <div class="sig-divider"></div>
                     <div class="sig-details">
                         <p class="sig-name">Justin Ghiglia, President</p>
@@ -657,7 +657,7 @@
         <footer class="footer">
             <div class="contact-info">
                 <p>PFL Academy - National Standards Aligned Financial Literacy Curriculum</p>
-                <p>© 2025 PFL Academy | justin@pflacademy.com | 415-990-2754</p>
+                <p>© 2025 PFL Academy | justin@pflacademy.co | 415-990-2754</p>
             </div>
         </footer>
     </div>
