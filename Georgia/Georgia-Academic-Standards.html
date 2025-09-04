@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFL Academy - Georgia Curriculum Overview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #374151;
+            line-height: 1.5;
+            background: #fff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            position: relative;
+        }
+        /* Gradient accents */
+        body::before, body::after {
+            content: "";
+            position: absolute; left: 0; right: 0; height: 8px; z-index: 5;
+        }
+        body::before { top: 0; background: linear-gradient(90deg,#4F46E5,#7E22CE); }
+        body::after  { bottom: 0; background: linear-gradient(90deg,#7E22CE,#4F46E5); }
+
+        .container { width: 100%; max-width: 8.5in; }
+
+        /* Header */
+        header{
+            background: linear-gradient(90deg,#4F46E5,#7E22CE);
+            color:#fff; padding:1rem 1.5rem; margin:0 0 1.5rem 0;
+            display:flex; align-items:center; justify-content:space-between;
+            box-shadow:0 4px 6px -1px rgba(0,0,0,.1);
+        }
+        .logo-area{ display:flex; align-items:center; }
+        .logo-image{ height:58px; width:auto; }
+        .tagline{
+            font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; letter-spacing:.05em;
+        }
+
+        /* Section styles */
+        h1{
+            font-family:'Poppins',sans-serif; font-weight:700; font-size:26px;
+            color:#4338CA; text-align:center; margin:1rem 0 1.2rem;
+        }
+        h2{
+            font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#fff;
+            background:linear-gradient(90deg,#4F46E5,#7E22CE);
+            padding:.5rem 1rem; border-radius:4px; margin:1.5rem 0 1rem;
+        }
+        h3{
+            font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; color:#4338CA;
+            margin:1rem 0 .5rem;
+        }
+        p{ font-size:11pt; margin-bottom:.75rem; }
+        .content-section{ padding:0 1.5rem 2rem; }
+
+        .intro-section{
+            background:#F3F4F6; border-left:4px solid #4F46E5; border-radius:4px;
+            padding:1.25rem; margin-bottom:1.5rem;
+        }
+
+        .day-grid{
+            display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1rem 0;
+        }
+        .day-box{
+            background:#F3F4F6; border-radius:8px; padding:1.25rem; border-top:4px solid #4F46E5;
+        }
+        .day-box h3{ margin-top:0; margin-bottom:.75rem; color:#4F46E5; }
+
+        /* Standards */
+        .standards-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+        .standard-box{ break-inside:avoid; margin-bottom:1.5rem; }
+        .standard-title{
+            font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; color:#4F46E5;
+            margin-bottom:.5rem; border-bottom:1px solid #E5E7EB; padding-bottom:.3rem;
+        }
+        .subsection-title{
+            font-family:'Poppins',sans-serif; font-weight:600; font-size:12px; color:#4338CA;
+            margin:1rem 0 .3rem; font-style:italic;
+        }
+        ul{ list-style:none; margin-left:1rem; margin-bottom:1rem; }
+        ul li{ position:relative; margin-bottom:.5rem; font-size:11pt; }
+        ul li::before{ content:"•"; position:absolute; left:-1rem; color:#10B981; }
+
+        /* Features */
+        .features-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem; }
+        .feature-box{
+            background:#F3F4F6; border-radius:8px; padding:1.25rem; margin-bottom:1rem;
+            border-left:4px solid #4F46E5;
+        }
+        .feature-box h3{ margin-top:0; color:#4F46E5; font-size:15px; }
+
+        /* Contact */
+        .contact-box{
+            background:#F3F4F6; border-radius:8px; padding:1.25rem; margin-top:2rem; border-top:4px solid #4F46E5;
+        }
+        .contact-intro-text{ margin-bottom:1rem; text-align: left; }
+        .signature{ display:flex; align-items:center; justify-content:center; gap:20px; margin-top:1rem; flex-wrap:wrap; }
+        .sig-logo { display: flex; align-items: center; }
+        .sig-logo-img { height: 100px; width: auto; }
+        .sig-divider{ width:2px; height:80px; background:#D1D5DB; }
+        .sig-details{ text-align:left; }
+        .sig-name{ font-family:'Poppins',sans-serif; font-size:18px; font-weight:700; margin-bottom:5px; color:#111827; }
+        .sig-info{ display:flex; align-items:center; margin-bottom:4px; font-size:14px; }
+        .sig-info svg{ width:16px; height:16px; margin-right:8px; fill:#4F46E5; }
+        .sig-info a{ color:#4F46E5; text-decoration:none; }
+        .sig-info a:hover{ text-decoration:underline; }
+
+        /* Footer */
+        .footer{
+            background:linear-gradient(90deg,#7E22CE,#4F46E5);
+            color:#fff; padding:1rem 1.5rem; margin:1.5rem 0 0;
+            display:flex; justify-content:center; align-items:center; text-align:center;
+        }
+        .contact-info{ font-size:11pt; }
+        .contact-info p{ margin-bottom:.25rem; }
+
+        /* Print */
+        @media print{
+            @page{ size:letter; margin:0; }
+            body{ width:8.5in; height:11in; -webkit-print-color-adjust:exact; color-adjust:exact; }
+            header, .footer{ position:absolute; width:100%; }
+            header{ top:0; margin:0; }
+            .footer{ bottom:0; margin:0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <img src="https://raw.githubusercontent.com/jghiglia2380/HTML-Content/main/PFL%20Academy%20logo-White.svg" alt="PFL Academy Logo" class="logo-image">
+            </div>
+            <div class="tagline">GEORGIA ALIGNED CURRICULUM</div>
+        </header>
+
+        <div class="content-section">
+            <h1>1:1 CURRICULUM ALIGNMENT WITH GEORGIA SB 220 STANDARDS</h1>
+            
+            <div class="intro-section">
+                <h3>COMPREHENSIVE SOLUTION FOR GEORGIA'S FINANCIAL LITERACY MANDATE</h3>
+                <p>PFL Academy's comprehensive financial literacy curriculum provides complete alignment with Georgia's SB 220 Personal Financial Literacy mandate and the redesigned Personal Finance and Economics course. Our 45-chapter curriculum balances personal finance education (50%) with economics content (50%) while preparing students for the Georgia Milestones Economics assessment.</p>
+            </div>
+
+            <div class="section">
+                <h2>CURRICULUM STRUCTURE</h2>
+                <p>The PFL Academy curriculum integrates personal finance with economic principles for 11th and 12th grade students. Each chapter follows a two-day instructional model:</p>
+                <div class="day-grid">
+                    <div class="day-box">
+                        <h3>Day 1: Integrated Content Delivery</h3>
+                        <ul>
+                            <li>Personal finance concepts with economic foundations</li>
+                            <li>Market analysis and economic theory applications</li>
+                            <li>Georgia-specific economic and financial case studies</li>
+                            <li>Interactive economic modeling and financial planning</li>
+                            <li>Economic policy impact on personal financial decisions</li>
+                        </ul>
+                    </div>
+                    <div class="day-box">
+                        <h3>Day 2: Applied Economics Lab</h3>
+                        <ul>
+                            <li>Economic simulation with personal finance applications</li>
+                            <li>Market analysis tools and financial decision modeling</li>
+                            <li>Georgia Milestones assessment preparation</li>
+                            <li>Economic research and financial planning projects</li>
+                            <li>Collaborative economic problem-solving exercises</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>GEORGIA PERSONAL FINANCE & ECONOMICS ALIGNMENT</h2>
+                <div class="standards-grid">
+                    <div><!-- Left Column -->
+                        <div class="standard-box">
+                            <div class="standard-title">Economic Foundations & Financial Decision-Making</div>
+                             <ul>
+                                <li>Chapter 1.1: Scarcity, Opportunity Cost, and Financial Choices</li>
+                                <li>Chapter 1.2: Economic Systems and Personal Financial Planning</li>
+                                <li>Chapter 1.3: Market Economics and Consumer Decision Making</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Labor Economics & Career Planning</div>
+                            <ul>
+                                <li>Chapter 2.1: Labor Markets and Career Economics</li>
+                                <li>Chapter 2.2: Human Capital Development and Income Analysis</li>
+                                <li>Chapter 2.3: Employment Economics and Job Market Navigation</li>
+                                <li>Chapter 2.4: Professional Development and Economic Mobility</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Fiscal Policy & Personal Taxation</div>
+                             <ul>
+                                <li>Chapter 3.1: Tax Systems and Economic Policy</li>
+                                <li>Chapter 3.2: Tax Policy Impact on Personal Finance</li>
+                                <li>Chapter 3.3: Tax Compliance and Economic Citizenship</li>
+                                <li>Chapter 3.4: Tax Planning and Economic Strategy</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Consumer Economics & Money Management</div>
+                             <ul>
+                                <li>Chapter 4.1: Household Economics and Budget Management</li>
+                                <li>Chapter 4.2: Consumer Markets and Spending Analysis</li>
+                                <li>Chapter 4.3: Economic Factors in Personal Financial Planning</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Financial Markets & Banking Economics</div>
+                             <ul>
+                                <li>Chapter 5.1: Banking Industry Structure and Competition</li>
+                                <li>Chapter 5.2: Financial Market Analysis and Consumer Choice</li>
+                                <li>Chapter 5.3: FinTech Innovation and Market Disruption</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Credit Markets & Consumer Finance</div>
+                             <ul>
+                                <li>Chapter 6.1: Credit Market Economics and Personal Credit</li>
+                                <li>Chapter 6.2: Credit Building in Economic Context</li>
+                                <li>Chapter 6.3: Credit Market Analysis and Decision Making</li>
+                                <li>Chapter 6.4: Consumer Credit Markets and Regulation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div><!-- Right Column -->
+                       <div class="standard-box">
+                            <div class="standard-title">Monetary Policy & Debt Economics</div>
+                            <ul>
+                                <li>Chapter 7.1: Interest Rate Economics and Borrowing Costs</li>
+                                <li>Chapter 7.2: Credit Market Competition and Source Analysis</li>
+                                <li>Chapter 7.3: Debt Economics and Management Strategies</li>
+                                <li>Chapter 7.4: Economic Recovery and Debt Resolution</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Capital Markets & Investment Economics</div>
+                             <ul>
+                                <li>Chapter 8.1: Capital Markets and Personal Investment</li>
+                                <li>Chapter 8.2: Economic Growth, Compound Interest, and Wealth</li>
+                                <li>Chapter 8.3: Investment Market Analysis and Strategy</li>
+                                <li>Chapter 8.4: Market Risk and Portfolio Economics</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Economic Security & Retirement Economics</div>
+                             <ul>
+                                <li>Chapter 9.1: Retirement Economics and Social Security</li>
+                                <li>Chapter 9.2: Long-Term Economic Planning and Security</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Risk Economics & Insurance Markets</div>
+                             <ul>
+                                <li>Chapter 10.1: Risk Economics and Insurance Market Analysis</li>
+                                <li>Chapter 10.2: Insurance as Economic Risk Transfer</li>
+                                <li>Chapter 10.3: Insurance Market Competition and Cost Analysis</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Market Regulation & Consumer Protection</div>
+                             <ul>
+                                <li>Chapter 11.1: Market Regulation and Consumer Economics</li>
+                                <li>Chapter 11.2: Digital Market Security and Economic Protection</li>
+                                <li>Chapter 11.3: Consumer Market Analysis and Protection Strategy</li>
+                            </ul>
+                        </div>
+                        <div class="standard-box">
+                            <div class="standard-title">Real Estate Economics & Market Analysis</div>
+                             <ul>
+                                <li>Chapter 12.1: Housing Market Economics and Analysis</li>
+                                <li>Chapter 12.2: Rental Market Economics and Consumer Rights</li>
+                                <li>Chapter 12.3: Real Estate Economics and Investment Analysis</li>
+                                <li>Chapter 12.4: Transportation Economics and Auto Finance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+             <div class="section">
+                <h2>KEY PLATFORM FEATURES</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h3>SB 220 Compliance & Economics Integration</h3>
+                        <ul>
+                            <li>50% personal finance, 50% economics content balance</li>
+                            <li>Integrated approach connecting economic theory to personal finance</li>
+                            <li>Market analysis skills development</li>
+                            <li>Economic policy impact on personal financial decisions</li>
+                            <li>Comprehensive preparation for post-secondary economics</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Georgia Milestones Assessment Preparation</h3>
+                        <ul>
+                            <li>Targeted preparation for Georgia Milestones Economics exam</li>
+                            <li>Comprehensive economic knowledge assessment</li>
+                            <li>Performance-based evaluation of economic reasoning</li>
+                            <li>Personal finance application of economic principles</li>
+                            <li>Progress tracking toward graduation requirements</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Georgia-Specific Economic Content</h3>
+                        <ul>
+                            <li>Georgia state tax system and economic policy analysis</li>
+                            <li>Regional economic development and career opportunities</li>
+                            <li>Georgia's role in national and international markets</li>
+                            <li>State economic indicators and personal finance impact</li>
+                            <li>Local financial institution and market landscape</li>
+                        </ul>
+                    </div>
+                    <div class="feature-box">
+                        <h3>11th-12th Grade Post-Secondary Focus</h3>
+                        <ul>
+                            <li>College financing economics and education investment analysis</li>
+                            <li>Career transition economics and financial preparation</li>
+                            <li>Economic independence planning and workforce entry</li>
+                            <li>Post-secondary economic decision-making frameworks</li>
+                            <li>Economic citizenship and civic engagement preparation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>IMPLEMENTATION & ACCESSIBILITY</h2>
+                <div class="day-grid">
+                    <div class="day-box" style="background-color: #EEF2FF; border-top: 4px solid #7E22CE;">
+                        <h3>SB 220 Graduation Requirement</h3>
+                        <ul>
+                            <li>Fulfills half-credit personal financial literacy mandate</li>
+                            <li>Integrates economics content for comprehensive understanding</li>
+                            <li>Prepares students for Georgia Milestones Economics assessment</li>
+                            <li>Supports post-secondary financial and economic readiness</li>
+                            <li>Flexible credit classification (math, social studies, or elective)</li>
+                        </ul>
+                    </div>
+                    <div class="day-box" style="background-color: #EEF2FF; border-top: 4px solid #4F46E5;">
+                        <h3>Implementation Flexibility</h3>
+                        <ul>
+                            <li>Standalone Personal Finance and Economics Course</li>
+                            <li>Integration into Existing Social Studies Curriculum</li>
+                            <li>Mathematics Integration with Economic Analysis</li>
+                            <li>Elective Course Implementation</li>
+                            <li>Hybrid In-Person/Digital Delivery Options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-box">
+                 <p class="contact-intro-text">For more information about PFL Academy's Georgia-aligned curriculum or to schedule a demonstration, please contact:</p>
+                <div class="signature">
+                    <div class="sig-logo">
+                       <img src="https://raw.githubusercontent.com/jghiglia2380/HTML-Content/main/PFL%20Academy%20logo-Color.svg" alt="PFL Academy Logo" class="sig-logo-img">
+                    </div>
+                    <div class="sig-divider"></div>
+                    <div class="sig-details">
+                        <p class="sig-name">Justin Ghiglia, President</p>
+                        <p class="sig-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            415-990-2754
+                        </p>
+                        <p class="sig-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <a href="mailto:justin@pflacademy.co">justin@pflacademy.co</a>
+                        </p>
+                        <p class="sig-info">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            <a href="https://www.pflacademy.co" target="_blank">www.pflacademy.co</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="contact-info">
+                <p>PFL Academy - Georgia Aligned Personal Finance & Economics Curriculum</p>
+                <p>© 2025 PFL Academy | justin@pflacademy.co | 415-990-2754</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
